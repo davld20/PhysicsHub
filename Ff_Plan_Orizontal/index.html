@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Laborator Fizica - Frecarea</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <style>
+        body { background-color: #000; color: #fff; font-family: sans-serif; margin: 0; padding: 10px; }
+        #controls { line-height: 1.8; margin-bottom: 10px; }
+        input, select { background: #fff; color: #000; border: 1px solid #ccc; margin-left: 5px; width: 80px; }
+        button { cursor: pointer; padding: 5px 15px; font-weight: bold; }
+        
+        #sim-container { 
+            width: 100%; 
+            height: 400px; 
+            background: #0f0f13; 
+            overflow: hidden; 
+            position: relative;
+            border: 1px solid #333;
+        }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+
+    <div id="controls" style="padding: 10px; background: #000;">
+    <button id="click">Start</button><br>
+    Material: <select id="material_select"><option value="0.17">Lemn</option><option value="0.19">Metal</option><option value="0.10">Plastic</option></select><br>
+    Masa (kg): <input type="number" id="mass_input" value="1"><br>
+    Viteza (m/s): <input type="number" id="speed_input" value="5">
+</div>
+
+<div id="sim-container" style="width: 100%; height: 350px; background: #0f0f13;"></div>
+
+<script src="sketch.js"></script>
+<script>
+  function trimiteInaltimea() {
+    // Calculăm înălțimea totală a conținutului
+    const inaltime = document.documentElement.scrollHeight || document.body.scrollHeight;
+    // Trimitem înălțimea către site-ul părinte
+    window.parent.postMessage({
+      type: 'resize-sim',
+      height: inaltime
+    }, '*');
+  }
+
+  window.onload = trimiteInaltimea;
+  setTimeout(trimiteInaltimea, 500);
+</script>
+</body>
+</html>
