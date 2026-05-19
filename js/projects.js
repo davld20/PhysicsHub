@@ -4,6 +4,7 @@ const caleRelativaSimulare = {
   oblica: "../Simulare_Aruncare_Pe_Oblica/index.html",
   plan_inclinat: "../Ff_Plan_Inclinat/index.html",
   plan_orizontal: "../Ff_Plan_Orizontal/index.html",
+  reflexie_refractie: "../Reflexie_Refractie/index.html",
 };
 
 const projects = [
@@ -105,6 +106,26 @@ const projects = [
     engine: "matter.js",
     topic: "Cinematica (clasa a 9-a)",
     caleSimulare: caleRelativaSimulare.plan_orizontal,
+    descriereProiect: `
+      <p class="mb-3">-</p>
+      <p class="mb-0">-</p>
+    `,
+    ipoteze: [""],
+    obiective: [""],
+    equations: [
+
+    ],
+    notes: [""],
+    media: [],
+  },
+  {
+    id: "Reflexie_Refractie",
+    title: "Reflexie și Refractie",
+    subtitle: "Legea reflexiei și legea refractiei",
+    summary: "-",
+    engine: "matter.js",
+    topic: "Cinematica (clasa a 9-a)",
+    caleSimulare: caleRelativaSimulare.reflexie_refractie,
     descriereProiect: `
       <p class="mb-3">-</p>
       <p class="mb-0">-</p>

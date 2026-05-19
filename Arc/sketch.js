@@ -20,6 +20,9 @@ var render = Render.create({
 });
 
 const ctx = render.canvas.getContext("2d");
+const simWidth = simulationDiv.clientWidth;
+const simHeight = simulationDiv.clientHeight - offset;
+const springOffsetY = simHeight * 0.2;
 
 function drawLine(ax, ay, bx, by, color, w) {
   ctx.beginPath();
@@ -41,9 +44,9 @@ function drawLetter(x, y, letter) {
   ctx.restore();
 }
 
-var boxA = Bodies.rectangle(window.innerWidth/2, window.innerHeight/2, 60, 60);
+var boxA = Bodies.rectangle(simWidth/2, simHeight/2, 60, 60);
 var spring = Matter.Constraint.create({
-  pointA: { x: window.innerWidth/2, y: window.innerHeight/2 - 100 },
+  pointA: { x: simWidth/2, y: simHeight/2 - springOffsetY },
   bodyB: boxA,
   stiffness: 0.01,
   damping: 0.01
@@ -62,8 +65,8 @@ Runner.run(runner, engine);
 
 function loop(){
 
-  let fe = Math.round(((Matter.Vector.magnitude(Matter.Vector.sub(boxA.position, { x: window.innerWidth/2, y: window.innerHeight/2 - 100 })) - spring.length) * spring.stiffness)*100)/100;
-  document.getElementById("length").innerText = "l=" + Math.round(Matter.Vector.magnitude(Matter.Vector.sub(boxA.position, { x: window.innerWidth/2, y: window.innerHeight/2 - 100 })))/100 + "m";
+  let fe = Math.round(((Matter.Vector.magnitude(Matter.Vector.sub(boxA.position, { x: simWidth/2, y: simHeight/2 - springOffsetY })) - spring.length) * spring.stiffness)*100)/100;
+  document.getElementById("length").innerText = "l=" + Math.round(Matter.Vector.magnitude(Matter.Vector.sub(boxA.position, { x: simWidth/2, y: simHeight/2 - springOffsetY })))/100 + "m";
   document.getElementById("force").innerText = "Fe=" + fe + "N";
 
   const g = engine.world.gravity;

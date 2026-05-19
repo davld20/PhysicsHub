@@ -24,17 +24,20 @@ var render = Render.create({
 });
 
 const width = simulationDiv.clientWidth;
-const height = simulationDiv.clientHeight;
+const height = simulationDiv.clientHeight - offset;
+const groundY = height * 0.95;
+const circleY = height * 0.9;
+const borderHeight = height * 1.2;
 
 let canPress = true;
 let del = [];
 
 // create two boxes and a ground
-var ground = Bodies.rectangle(width/2, height-40, width+20, 60, { isStatic: true });
+var ground = Bodies.rectangle(width/2, groundY, width+20, 60, { isStatic: true });
 
-var circleA = Bodies.circle((width/2)-(width/2.5), height-80, 10);
+var circleA = Bodies.circle((width/2)-(width/2.5), circleY, 10);
 
-var border = Bodies.rectangle(width, (height/2), 30, 810, { isStatic: true });
+var border = Bodies.rectangle(width, (height/2), 30, borderHeight, { isStatic: true });
 
 const camWidth = render.options.width;
 const camHeight = render.options.height;
@@ -76,9 +79,9 @@ butt.onclick = function () {
   simEngine.world.gravity.y = engine.world.gravity.y;
   simEngine.world.gravity.scale = engine.world.gravity.scale;
 
-  let simGround = Bodies.rectangle(width/2, height-40, width+20, 60, { isStatic: true });
-  let simBorder = Bodies.rectangle(width, (height/2), 30, 810, { isStatic: true });
-  let temp = Bodies.circle((width/2)-(width/2.5), height-80, 10);
+  let simGround = Bodies.rectangle(width/2, groundY, width+20, 60, { isStatic: true });
+  let simBorder = Bodies.rectangle(width, (height/2), 30, borderHeight, { isStatic: true });
+  let temp = Bodies.circle((width/2)-(width/2.5), circleY, 10);
 
   Composite.add(simEngine.world, [temp, simGround, simBorder]);
 
@@ -106,7 +109,7 @@ butt.onclick = function () {
         Composite.add(engine.world, c);
     }
 
-    const groundTop = (height - 40) - 30;
+    const groundTop = groundY - 30;
 
     if (temp.position.y >= groundTop - temp.circleRadius) {
         break;
