@@ -111,7 +111,11 @@ if (nodMedia) {
     );
   }
 
+<<<<<<< HEAD
   // Adaugă fișa de laborator ca link de descărcare
+=======
+  // Adaugă link descărcare pentru docx
+>>>>>>> 0975bce7c7d3dcd8fd0a3bb583aa8465bd000181
   if (proiect.materialStudiu && proiect.materialStudiu.docxFile) {
     mediaContent.push(`
       <div class="card-eq">
@@ -121,7 +125,11 @@ if (nodMedia) {
           download
           class="flex h-[10rem] items-center justify-center rounded-lg border border-[var(--accent)] bg-[rgba(255,165,0,0.1)] text-center text-sm font-medium text-[var(--accent)] hover:bg-[rgba(255,165,0,0.2)] transition"
         >
+<<<<<<< HEAD
           ⬇️ Descarcă material de studiu
+=======
+          ⬇️ Descarcă material
+>>>>>>> 0975bce7c7d3dcd8fd0a3bb583aa8465bd000181
         </a>
       </div>
     `);

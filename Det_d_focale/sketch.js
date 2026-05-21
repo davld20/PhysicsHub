@@ -70,8 +70,13 @@ function draw() {
   ctx.clearRect(0, 0, W, H);
 
   var tip = document.getElementById("tip").value;
+<<<<<<< HEAD
   var f = parseFloat(document.getElementById("focal").value) || 4;
   var d = parseFloat(document.getElementById("dist").value) || 6;
+=======
+  var f = parseFloat(document.getElementById("focal").value) || 150;
+  var d = parseFloat(document.getElementById("dist").value) || 300;
+>>>>>>> 0975bce7c7d3dcd8fd0a3bb583aa8465bd000181
 
   var fReal = tip === "convergenta" ? f : -f;
   var dPrim = (fReal * d) / (d - fReal);

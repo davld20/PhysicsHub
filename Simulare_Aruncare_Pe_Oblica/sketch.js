@@ -1,9 +1,17 @@
+<<<<<<< HEAD
+=======
+// module aliases
+>>>>>>> 0975bce7c7d3dcd8fd0a3bb583aa8465bd000181
 var Engine = Matter.Engine,
     Render = Matter.Render,
     Runner = Matter.Runner,
     Bodies = Matter.Bodies,
     Composite = Matter.Composite;
 
+<<<<<<< HEAD
+=======
+// create an engine
+>>>>>>> 0975bce7c7d3dcd8fd0a3bb583aa8465bd000181
 var engine = Engine.create();
 
 const simulationDiv = window.parent.document.getElementById("simulation-mount");
@@ -24,12 +32,20 @@ var render = Render.create({
 const width = simulationDiv.clientWidth;
 const height = simulationDiv.clientHeight - offset;
 const groundY = height * 0.95;
+<<<<<<< HEAD
 const circleY = groundY - 40;
+=======
+const circleY = height * 0.9;
+>>>>>>> 0975bce7c7d3dcd8fd0a3bb583aa8465bd000181
 const borderHeight = height * 1.2;
 
 let canPress = true;
 let del = [];
 
+<<<<<<< HEAD
+=======
+// create two boxes and a ground
+>>>>>>> 0975bce7c7d3dcd8fd0a3bb583aa8465bd000181
 var ground = Bodies.rectangle(width/2, groundY, width+20, 60, { isStatic: true });
 
 var circleA = Bodies.circle((width/2)-(width/2.5), circleY, 10);
@@ -48,11 +64,23 @@ render.bounds.min.y = targetY;
 render.bounds.max.x = targetX + camWidth;
 render.bounds.max.y = targetY + camHeight;
 
+<<<<<<< HEAD
 Composite.add(engine.world, [circleA, ground, border]);
 
 Render.run(render);
 
 var runner = Runner.create();
+=======
+// add all of the bodies to the world
+Composite.add(engine.world, [circleA, ground, border]);
+
+// run the renderer
+Render.run(render);
+
+// create runner
+var runner = Runner.create();
+// run the engine
+>>>>>>> 0975bce7c7d3dcd8fd0a3bb583aa8465bd000181
 Runner.run(runner, engine);
 
 const butt = document.getElementById("click");
@@ -68,6 +96,7 @@ butt.onclick = function () {
   let vx0 = Math.cos(angle) * speed * 100;
   let vy0 = -Math.sin(angle) * speed * 100;
 
+<<<<<<< HEAD
   const g = engine.world.gravity.y * engine.world.gravity.scale * 1000;
   const launchHeight = circleY;
   const groundHeight = groundY;
@@ -85,6 +114,8 @@ butt.onclick = function () {
   document.getElementById("range").innerText =
     "Bătaie: " + range.toFixed(1) + " px";
 
+=======
+>>>>>>> 0975bce7c7d3dcd8fd0a3bb583aa8465bd000181
   let simEngine = Matter.Engine.create();
   simEngine.world.gravity.y = engine.world.gravity.y;
   simEngine.world.gravity.scale = engine.world.gravity.scale;
@@ -130,7 +161,11 @@ butt.onclick = function () {
     canPress = false;
 
     Matter.Body.setStatic(circleA, true);
+<<<<<<< HEAD
     Matter.Body.setPosition(circleA, { x: ((width/2)-(width/2.5)), y: circleY });
+=======
+    Matter.Body.setPosition(circleA, { x: ((width/2)-(width/2.5)), y: (height - 80) });
+>>>>>>> 0975bce7c7d3dcd8fd0a3bb583aa8465bd000181
 
     setTimeout(() => {
       Matter.Body.setStatic(circleA, false);

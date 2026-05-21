@@ -70,10 +70,17 @@ const projects = [
       String.raw`v = \text{constanta}`,
     ],
     media: [
+<<<<<<< HEAD
      //{
     //        label: "Exemplu Miscare Rectiline Uniforma in Ulei",
     //        src: "../assets/inregistrari/Miscarea uniforma.mp4", 
     //    },
+=======
+      {
+            label: "Exemplu Miscare Rectiline Uniforma in Ulei",
+            src: "../assets/inregistrari/Miscarea uniforma.mp4", 
+        },
+>>>>>>> 0975bce7c7d3dcd8fd0a3bb583aa8465bd000181
     ],
     materialStudiu: {
       label: "Fișă de laborator",
@@ -328,7 +335,11 @@ const projects = [
     title: "Determinarea distanței focale a unei lentile",
     subtitle: "Studiul formării imaginilor și construcția de raze",
     summary: "Simulare interactivă bazată pe HTML5 Canvas pentru vizualizarea traiectoriei razelor de lumină prin lentile convergente și divergente, permițând verificarea experimentală a formulelor optice.",
+<<<<<<< HEAD
     engine: "matter.js",
+=======
+    engine: "canvas2d",
+>>>>>>> 0975bce7c7d3dcd8fd0a3bb583aa8465bd000181
     topic: "Optică (clasa a 9-a)",
     caleSimulare: caleRelativaSimulare.det_d_f,
     descriereProiect: `
@@ -376,12 +387,21 @@ const projects = [
             src: "../assets/poze/lentile4.jpg",
         },
         {
+<<<<<<< HEAD
             label: "Video lentilă convergentă 1",
             src: "../assets/inregistrari/Lentile1.mp4",
         },
         {
             label: "Video lentilă convergentă 2",
             src: "../assets/inregistrari/Lentile2.mp4",
+=======
+            label: "Video lentilă convergentă",
+            src: "../assets/inregistrari/lentile1.mp4",
+        },
+        {
+            label: "Video lentilă divergentă",
+            src: "../assets/inregistrari/lentile2.mp4",
+>>>>>>> 0975bce7c7d3dcd8fd0a3bb583aa8465bd000181
         }
     ],
     materialStudiu: {
@@ -424,6 +444,13 @@ const projects = [
       String.raw`F_{net} = G_2 - G_1 \sin\alpha - F_f`,
     ],
     media: [
+<<<<<<< HEAD
+=======
+        {
+            label: "Exemplu de tabel pentru notițe",
+            src: "../assets/IMG-20260515-WA0036.jpg",
+        },
+>>>>>>> 0975bce7c7d3dcd8fd0a3bb583aa8465bd000181
     ],
     materialStudiu: {
       label: "Fișă de laborator",

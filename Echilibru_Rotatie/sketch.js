@@ -42,6 +42,7 @@ function drawLetter(x, y, letter) {
     ctx.restore();
 }
 
+<<<<<<< HEAD
 function drawPivot() {
     ctx.save();
     ctx.fillStyle = "#ffcc00";
@@ -54,6 +55,8 @@ function drawPivot() {
     ctx.restore();
 }
 
+=======
+>>>>>>> 0975bce7c7d3dcd8fd0a3bb583aa8465bd000181
 let momentStanga = masaC1 * distantaBrat1;
 let momentDreapta = masaC2 * distantaBrat2;
 
@@ -176,5 +179,8 @@ Matter.Events.on(render, "afterRender", function () {
 
     drawLetter(corp1.position.x, corp1.position.y, "1");
     drawLetter(corp2.position.x, corp2.position.y, "2");
+<<<<<<< HEAD
     drawPivot();
+=======
+>>>>>>> 0975bce7c7d3dcd8fd0a3bb583aa8465bd000181
 });
