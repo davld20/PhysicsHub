@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <div style="height:auto;" id="info">
+    <button id="click">Start</button>
+    <div style="display: flex; align-items: center; gap: 0px; margin-top: 8px;">
+      <p style="color:#FFFFFF; margin: 0; width: 100px;">Unghi (°):</p>
+      <input type="number" id="angle"/>
+    </div>
+    <div style="display: flex; align-items: center; gap: 0px; margin-top: 8px;">
+      <p style="color:#FFFFFF; margin: 0; width: 100px;">Viteză (px/s):</p>
+      <input type="number" id="speed"/>
+    </div>
+    <div id="stats" style="margin-top: 10px; color:#FFFFFF; font-size:0.9rem; line-height:1.4;">
+      <div id="max-height">Înălțime maximă: —</div>
+      <div id="range">Bătaie: —</div>
+      <div id="output">Unitate: pixeli (px), viteză în px/s</div>
+    </div>
+  </div>
+  <script src="matter.js"></script>
+  <script src="sketch.js"></script>
+</body>
+
+</html>
